@@ -13,7 +13,8 @@ params = {
     'batch_size': 32,
     'n_classes': 3, #confidence, width kernel, height kernel
     'n_channels': 3, #for RGB image
-    'shuffle': True
+    'shuffle': True,
+    'steps': 500
 }
 
 # Generators
@@ -28,10 +29,10 @@ model.compile(
     metrics=[sm.metrics.recall, sm.metrics.precision],
     callbacks=[
         CyclicLR(
-	        mode=config.CLR_METHOD,
-	        base_lr=config.MIN_LR,
-	        max_lr=config.MAX_LR,
-	        step_size=config.STEP_SIZE*(trainX.shape[0]//config.BATCH_SIZE)
+	        mode='triangular',
+	        base_lr=0.00001,
+	        max_lr=0.001,
+	        step_size=params['steps']
         )
     ]
 )
