@@ -3,8 +3,6 @@ from data_generator import DataGenerator
 from clr_callback import CyclicLR
 from unet import UNet
 
-BACKBONE = 'vgg19shrink'
-preprocess_input = sm.get_preprocessing(BACKBONE)
 
 # Parameters
 params = {
@@ -20,8 +18,8 @@ params = {
 }
 
 # Generators
-training_generator = DataGenerator(preprocess_input, **params)
-validation_generator = DataGenerator(preprocess_input, **params)
+training_generator = DataGenerator(preprocess_input=None, **params)
+validation_generator = DataGenerator(preprocess_input=None, **params)
 
 # define model
 model = UNet(pretrained_weights='lp_detect.h5')
