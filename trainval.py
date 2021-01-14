@@ -1,6 +1,7 @@
 import segmentation_models as sm
 from data_generator import DataGenerator
 from clr_callback import CyclicLR
+from unet import UNet
 
 BACKBONE = 'vgg19shrink'
 preprocess_input = sm.get_preprocessing(BACKBONE)
@@ -14,7 +15,8 @@ params = {
     'n_classes': 3, #confidence, width kernel, height kernel
     'n_channels': 3, #for RGB image
     'shuffle': True,
-    'steps': 500
+    'steps': 500,
+    'name': 'lp_detect'
 }
 
 # Generators
@@ -22,7 +24,7 @@ training_generator = DataGenerator(preprocess_input, **params)
 validation_generator = DataGenerator(preprocess_input, **params)
 
 # define model
-model = sm.Unet(BACKBONE, encoder_weights='imagenet')
+model = UNet(pretrained_weights='lp_detect.h5')
 model.compile(
     'SGD',
     loss=sm.losses.binary_crossentropy,
