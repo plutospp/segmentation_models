@@ -1,30 +1,30 @@
 import segmentation_models as sm
 from data_generator import DataGenerator
 
-BACKBONE = 'vgg19'
+BACKBONE = 'vgg19shrink'
 preprocess_input = sm.get_preprocessing(BACKBONE)
 
 # Parameters
-params = {'dim': (32,32,32),
-          'batch_size': 64,
-          'n_classes': 6,
-          'n_channels': 1,
-          'shuffle': True}
-
-# Datasets
-partition = # IDs
-labels = # Labels
+params = {
+    'train': 'train',
+    'validation': 'validation',
+    'dim': (360, 640),
+    'batch_size': 32,
+    'n_classes': 3, #confidence, width kernel, height kernel
+    'n_channels': 3, #for RGB image
+    'shuffle': True
+}
 
 # Generators
-training_generator = DataGenerator(partition['train'], labels, preprocess_input, **params)
-validation_generator = DataGenerator(partition['validation'], labels, preprocess_input, **params)
+training_generator = DataGenerator(preprocess_input, **params)
+validation_generator = DataGenerator(preprocess_input, **params)
 
 # define model
 model = sm.Unet(BACKBONE, encoder_weights='imagenet')
 model.compile(
-    'Adam',
-    loss=sm.losses.bce_jaccard_loss,
-    metrics=[sm.metrics.iou_score],
+    'SGD',
+    loss=sm.losses.binary_crossentropy,
+    metrics=[sm.metrics.seg_recall, sm.metrics.seg_precision],
 )
 
 # fit model
