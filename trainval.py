@@ -2,24 +2,16 @@ import segmentation_models as sm
 from data_generator import DataGenerator
 from clr_callback import CyclicLR
 from unet import UNet
+import argparse
 
 
-# Parameters
-params = {
-    'train': 'train',
-    'validation': 'validation',
-    'dim': (360, 640),
-    'batch_size': 32,
-    'n_classes': 3, #confidence, width kernel, height kernel
-    'n_channels': 3, #for RGB image
-    'shuffle': True,
-    'steps': 500,
-    'name': 'lp_detect'
-}
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--params", type=str, help="training item")
+args = parser.parse_args()
 
 # Generators
-training_generator = DataGenerator(preprocess_input=None, **params)
-validation_generator = DataGenerator(preprocess_input=None, **params)
+training_generator = DataGenerator(preprocess_input=None, **args.params)
+validation_generator = DataGenerator(preprocess_input=None, **args.params)
 
 # define model
 model = UNet(pretrained_weights='lp_detect.h5')
