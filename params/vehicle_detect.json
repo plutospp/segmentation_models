@@ -1,0 +1,11 @@
+{
+    'train': 'data/vehicle_detect/train',
+    'validation': 'data/vehicle_detect/validation',
+    'dim_in': (360, 640, 3),
+    'dim_out': (90, 160, 15),
+    'batch_size': 32,
+    'outputs': ['center', 'width', 'height', 'motor', 'small', 'mid', 'large', 'hash_code']
+    'shuffle': True,
+    'steps': 500,
+    'name': 'vehicle'
+}
