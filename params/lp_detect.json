@@ -5,7 +5,7 @@
     "dim_out": [90, 160, 3],
     "batch_size": 32,
     "classes": ["center", "width", "height"]
-    "shuffle": True,
+    "shuffle": true,
     "steps": 500,
     "name": "lp_detect"
 }
