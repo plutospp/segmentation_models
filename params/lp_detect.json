@@ -1,11 +1,11 @@
 {
-    'train': 'data/lp_detect/train',
-    'validation': 'data/lp_detect/validation',
-    'dim_in': (360, 640, 3),
-    'dim_out': (90, 160, 3),
-    'batch_size': 32,
-    'classes': ['center', 'width', 'height']
-    'shuffle': True,
-    'steps': 500,
-    'name': 'lp_detect'
+    "train": "data/lp_detect/train",
+    "validation": "data/lp_detect/validation",
+    "dim_in": [360, 640, 3],
+    "dim_out": [90, 160, 3],
+    "batch_size": 32,
+    "classes": ["center", "width", "height"]
+    "shuffle": True,
+    "steps": 500,
+    "name": "lp_detect"
 }
