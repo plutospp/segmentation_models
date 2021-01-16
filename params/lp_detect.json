@@ -7,5 +7,6 @@
     "classes": ["center", "width", "height"],
     "shuffle": true,
     "steps": 500,
-    "name": "lp_detect"
+    "name": "lp_detect",
+    "augmentation": "light"
 }
