@@ -13,5 +13,6 @@
     ],
     "shuffle": true,
     "steps": 2000,
-    "name": "lp_recognition"
+    "name": "lp_recognition",
+    "augmentation": "strong"
 }
