@@ -7,5 +7,6 @@
     "classes": ["center", "width", "height", "pedestrian", "two-wheel", "small", "mid", "large", "hash_code"],
     "shuffle": true,
     "steps": 1000,
-    "name": "vehicle_detect"
+    "name": "vehicle_detect",
+    "augmentation": "light"
 }
