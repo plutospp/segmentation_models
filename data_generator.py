@@ -1,5 +1,7 @@
 import numpy as np
 import keras
+import os
+
 
 class DataGenerator(keras.utils.Sequence):
 
@@ -7,7 +9,12 @@ class DataGenerator(keras.utils.Sequence):
         self.dim_in = kwargs['dim_in']
         self.dim_out = kwargs['dim_out']
         self.batch_size = kwargs['batch_size']
-        self.list_IDs = [ for fl in os.listdir()]
+        self.list_IDs = [
+            fl.replace('.jpg', '') for fl in os.listdir(
+                os.path.join('data', kwargs['dataset'], subset)
+            ) if fl.endswith('.jpg')
+        ]
+        self.items = kwargs['items']
         self.shuffle = shuffle
         self.on_epoch_end()
 
