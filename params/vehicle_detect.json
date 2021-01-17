@@ -1,6 +1,5 @@
 {
-    "train": "data/vehicle_detect/train",
-    "validation": "data/vehicle_detect/validation",
+    "dataset": "data/MIO_TCD",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 16],
     "batch_size": 32,
