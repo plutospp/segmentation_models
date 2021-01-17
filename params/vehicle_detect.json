@@ -4,7 +4,7 @@
     "dim_out": [90, 160, 24],
     "batch_size": 32,
     "items": {
-        "location": "center",
+        "location": ["x", "y"],
         "scale": ["width", "height"],
         "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
         "hash_code": [
