@@ -5,7 +5,7 @@
     "batch_size": 32,
     "items": {
         "classes": ["day", "night"],
-        "properties": "true"
+        "properties": ["fake"]
     },
     "shuffle": true,
     "steps": 500,
