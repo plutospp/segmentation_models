@@ -1,5 +1,5 @@
 {
-    "dataset": "data/lp_recognition",
+    "dataset": "lp_recognition",
     "dim_in": [128, 128, 3],
     "dim_out": [32, 32, 35],
     "batch_size": 128,
@@ -12,6 +12,6 @@
     ],
     "shuffle": true,
     "steps": 2000,
-    "name": "lp_recognition",
-    "augmentation": "strong"
+    "augmentation": "strong",
+    "preprocess": null
 }
