@@ -1,11 +1,11 @@
 {
-    "dataset": "data/vehicle_detect",
+    "dataset": "vehicle_detect",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 16],
     "batch_size": 32,
     "classes": ["center", "width", "height", "pedestrian", "two-wheel", "small", "mid", "large", "hash_code"],
     "shuffle": true,
     "steps": 1000,
-    "name": "vehicle_detect",
-    "augmentation": "light"
+    "augmentation": "light",
+    "preprocess": null
 }
