@@ -1,6 +1,5 @@
 {
-    "train": "data/lp_detect/train",
-    "validation": "data/lp_detect/validation",
+    "dataset": "data/lp_detect",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 3],
     "batch_size": 32,
