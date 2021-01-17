@@ -4,13 +4,13 @@
     "dim_out": [90, 160, 24],
     "batch_size": 32,
     "items": {
-        "location": "center",
-        "scale": {"width", "height"},
-        "classes": {"pedestrian", "two-wheel", "small", "mid", "large"},
-        "hash_code": {
+        "location": ["center"],
+        "scale": ["width", "height"],
+        "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
+        "hash_code": [
             "h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10",
             "h11", "h12", "h13", "h14", "h15", "h16"
-        }
+        ]
     },
     "shuffle": true,
     "steps": 1000,
