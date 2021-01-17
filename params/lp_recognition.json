@@ -1,6 +1,5 @@
 {
-    "train": "data/lp_recognition/train",
-    "validation": "data/lp_recognition/validation",
+    "dataset": "data/lp_recognition",
     "dim_in": [128, 128, 3],
     "dim_out": [32, 32, 35],
     "batch_size": 128,
