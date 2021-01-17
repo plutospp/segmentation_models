@@ -1,5 +1,5 @@
 {
-    "dataset": "data/MIO_TCD",
+    "dataset": "data/vehicle_detect",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 16],
     "batch_size": 32,
