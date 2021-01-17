@@ -1,0 +1,13 @@
+{
+    "dataset": "day_and_night",
+    "dim_in": [360, 640, 3],
+    "dim_out": [1, 1, 2],
+    "batch_size": 32,
+    "items": {
+        "properties": ["day", "true"]
+    },
+    "shuffle": true,
+    "steps": 500,
+    "augmentation": "light",
+    "preprocess": null
+}
