@@ -2,16 +2,12 @@ import numpy as np
 import keras
 
 class DataGenerator(keras.utils.Sequence):
-    'Generates data for Keras'
-    def __init__(self, list_IDs, labels, batch_size=32, dim=(32,32,32), n_channels=1,
-                 n_classes=10, shuffle=True):
-        'Initialization'
-        self.dim = dim
-        self.batch_size = batch_size
-        self.labels = labels
-        self.list_IDs = list_IDs
-        self.n_channels = n_channels
-        self.n_classes = n_classes
+
+    def __init__(self, subset, **kwargs):
+        self.dim_in = kwargs['dim_in']
+        self.dim_out = kwargs['dim_out']
+        self.batch_size = kwargs['batch_size']
+        self.list_IDs = [ for fl in os.listdir()]
         self.shuffle = shuffle
         self.on_epoch_end()
 
