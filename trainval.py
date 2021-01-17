@@ -10,8 +10,8 @@ parser.add_argument("-p", "--params", type=str, help="training item")
 args = parser.parse_args()
 
 # Generators
-training_generator = DataGenerator(preprocess_input=None, subset='training', **args.params)
-validation_generator = DataGenerator(preprocess_input=None, subset='validation', **args.params)
+training_generator = DataGenerator(subset='training', **args.params)
+validation_generator = DataGenerator(subset='validation', **args.params)
 
 # define model
 model = UNet(pretrained_weights='lp_detect.h5')
