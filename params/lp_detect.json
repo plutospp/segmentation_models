@@ -6,7 +6,6 @@
     "classes": ["center", "width", "height"],
     "shuffle": true,
     "steps": 500,
-    "name": "lp_detect",
     "augmentation": "light",
     "preprocess": null
 }
