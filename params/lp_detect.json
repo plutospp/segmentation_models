@@ -1,5 +1,5 @@
 {
-    "dataset": "data/lp_detect",
+    "dataset": "lp_detect",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 3],
     "batch_size": 32,
@@ -7,5 +7,6 @@
     "shuffle": true,
     "steps": 500,
     "name": "lp_detect",
-    "augmentation": "light"
+    "augmentation": "light",
+    "preprocess": null
 }
