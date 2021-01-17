@@ -4,7 +4,7 @@
     "dim_out": [90, 160, 3],
     "batch_size": 32,
     "items": {
-        "location": "center",
+        "location": ["x", "y"],
         "scale": ["width", "height"]
     },
     "shuffle": true,
