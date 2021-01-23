@@ -5,10 +5,12 @@
     },
     "dim_out": {
         "properties": [1, 1, 1],
+        "image_out": [128, 128, 3]
     },
     "batch_size": 128,
     "items": {
-        "properties": "real"
+        "properties": "real",
+        "image_out": [128, 128, 3]
     },
     "shuffle": true,
     "steps": 2000,
