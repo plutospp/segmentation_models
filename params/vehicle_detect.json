@@ -1,5 +1,5 @@
 {
-    "dataset": "vehicle_detect",
+    "dataset": "MIOTCD",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 24],
     "batch_size": 32,
