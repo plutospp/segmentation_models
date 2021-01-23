@@ -8,7 +8,10 @@
         "scale": ["width", "height"],
         "classes": ["pedestrian", "two-wheel", "small", "mid", "large"]
     },
-    "hash_code": 4,
+    "hash": {
+        "type": "dhash",
+        "size": 4
+    },
     "shuffle": true,
     "steps": 1000,
     "augmentation": "light",
