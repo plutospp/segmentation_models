@@ -1,5 +1,5 @@
 {
-    "dataset": "multi_lp_detect",
+    "dataset": "CCPD2019",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 3],
     "batch_size": 32,
