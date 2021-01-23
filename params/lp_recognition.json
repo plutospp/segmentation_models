@@ -4,7 +4,7 @@
         "image": [128, 128, 3]
     },
     "dim_out": {
-        "lp_result": [32, 1, 68]
+        "lp_score": [32, 1, 68]
     },
     "batch_size": 128,
     "labels": {
