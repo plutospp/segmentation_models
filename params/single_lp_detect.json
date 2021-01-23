@@ -1,0 +1,14 @@
+{
+    "dataset": "AOLP",
+    "dim_in": [256, 256, 3],
+    "dim_out": [1, 1, 4],
+    "batch_size": 32,
+    "items": {
+        "location": ["x", "y"],
+        "scale": ["width", "height"]
+    },
+    "shuffle": true,
+    "steps": 500,
+    "augmentation": "light",
+    "preprocess": null
+}
