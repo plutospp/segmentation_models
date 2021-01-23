@@ -1,0 +1,15 @@
+{
+    "dataset": "Cars_and_MIOTCDcrop",
+    "dim_in": [256, 256, 3],
+    "dim_out": [1, 1, 20],
+    "batch_size": 32,
+    "items": {
+        "location": ["x", "y"],
+        "scale": ["width", "height"]
+    },
+    "hash_code": [4, 4],
+    "shuffle": true,
+    "steps": 1000,
+    "augmentation": "light",
+    "preprocess": null
+}
