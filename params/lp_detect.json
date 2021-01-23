@@ -1,5 +1,5 @@
 {
-    "dataset": "lp_detect",
+    "dataset": "multi_lp_detect",
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 3],
     "batch_size": 32,
