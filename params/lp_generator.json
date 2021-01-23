@@ -1,1 +1,17 @@
-
+{
+    "dataset": "chinese_lp_synthetic",
+    "dim_in": {
+        "image": [128, 128, 3]
+    },
+    "dim_out": {
+        "properties": [1, 1, 1],
+    },
+    "batch_size": 128,
+    "items": {
+        "properties": "real"
+    },
+    "shuffle": true,
+    "steps": 2000,
+    "augmentation": "strong",
+    "preprocess": null
+}
