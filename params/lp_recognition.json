@@ -1,7 +1,11 @@
 {
     "dataset": "lp_recognition",
-    "dim_in": [128, 128, 3],
-    "dim_out": [32, 1, 68],
+    "dim_in": {
+        "image": [128, 128, 3]
+    },
+    "dim_out": {
+        "lp_result": [32, 1, 68]
+    },
     "batch_size": 128,
     "labels": {
         "location": "x",
