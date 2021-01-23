@@ -2,6 +2,7 @@ import numpy as np
 import keras
 import os
 import albumentations as ab
+import imagehash
 
 
 class DataGenerator(keras.utils.Sequence):
@@ -15,8 +16,9 @@ class DataGenerator(keras.utils.Sequence):
                 os.path.join('data', kwargs['dataset'], subset)
             ) if fl.endswith('.jpg')
         ]
-        self.items = kwargs['items']
+        self.labels = kwargs['labels']
         self.shuffle = shuffle
+        self.aug = __get_augmentor(**kwargs['data_augmentations'])
         self.on_epoch_end()
 
     def __len__(self):
@@ -41,6 +43,11 @@ class DataGenerator(keras.utils.Sequence):
             y[i] = self.labels[ID]
         return X, keras.utils.to_categorical(y, num_classes=self.n_classes)
     
-    def __data_augmentation(self, img, bbox, key_points, imgs_out):
+    def __get_augmentor(self):
+        return 
+    
+    def __get_imagehash(self, img):
+        hash_fn = getattr(imagehash, self.hash['type'])
+        return hash_fn(hash_size = self.hash['size']).hash
         
-        
+    
