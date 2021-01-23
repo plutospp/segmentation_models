@@ -3,7 +3,7 @@
     "dim_in": [128, 128, 3],
     "dim_out": [32, 1, 68],
     "batch_size": 128,
-    "items": {
+    "labels": {
         "location": "x",
         "classes": [
             "皖", "沪", "津", "渝", "冀", "晋", "蒙", "辽", "吉",
