@@ -8,7 +8,7 @@
         "properties": [1, 1, 1]
     },
     "batch_size": 128,
-    "items": {
+    "labels": {
         "location": "x",
         "classes": [
             "皖", "沪", "津", "渝", "冀", "晋", "蒙", "辽", "吉",
