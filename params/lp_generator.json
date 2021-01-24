@@ -8,9 +8,7 @@
         "image_out": [128, 128, 3, 1]
     },
     "batch_size": 128,
-    "labels": {
-        "properties": "real"
-    },
+    "labels": {"properties": "real"},
     "shuffle": true,
     "steps": 2000,
     "augmentation": "strong",
