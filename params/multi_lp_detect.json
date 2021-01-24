@@ -4,12 +4,11 @@
         "image": [360, 640, 3]
     },
     "dim_out": {
-        "lp_bbox_heatmap": [90, 160, 3]
+        "bbox": [90, 160, 3]
     },
     "batch_size": 32,
-    "items": {
-        "location": ["x", "y"],
-        "scale": ["width", "height"]
+    "labels": {
+        "bbox": ["x", "y", "width", "height"]
     },
     "shuffle": true,
     "steps": 500,
