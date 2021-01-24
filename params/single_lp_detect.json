@@ -1,9 +1,13 @@
 {
     "dataset": "AOLP",
-    "dim_in": {
-        "image": [256, 256, 3]
+    "inputs": {
+        "local": {
+            "size": [256, 256],
+            "image": 3
+        },
+        "global": 
     },
-    "dim_out": {
+    "outputs": {
         "global_scores": [1, 1, 4]
     },
     "batch_size": 32,
