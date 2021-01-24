@@ -1,15 +1,23 @@
 {
     "dataset": "CCPD2019",
-    "dim_in": {
-        "image": [360, 640, 3]
+    "inputs": {
+        "local": {
+            "size": [360, 640],
+            "image": 3
+        }
     },
-    "dim_out": {
-        "location_scores": [90, 160, 3]
+    "outputs": {
+        "local": {
+            "size": [90, 160],
+            "location": 1,
+            "scales": 2 
+        }
     },
     "batch_size": 32,
     "labels": {
-        "location_scores": {
-            "bbox": ["x", "y", "width", "height"]
+        "local": {
+            "location": ["x", "y"],
+            "scales": ["width", "height"]
         }
     },
     "shuffle": true,
