@@ -4,12 +4,11 @@
         "image": [256, 256, 3]
     },
     "dim_out": {
-        "lp_bbox": [1, 1, 4]
+        "bbox": [1, 1, 4]
     },
     "batch_size": 32,
-    "items": {
-        "location": ["x", "y"],
-        "scale": ["width", "height"]
+    "labels": {
+        "bbox": ["x", "y", "width", "height"]
     },
     "shuffle": true,
     "steps": 500,
