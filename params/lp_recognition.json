@@ -4,7 +4,7 @@
         "image": [128, 128, 3]
     },
     "dim_out": {
-        "location": [32, 1, 1]
+        "location": [32, 1, 1],
         "classes": [32, 1, 70]
     },
     "batch_size": 128,
