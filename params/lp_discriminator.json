@@ -5,7 +5,7 @@
     },
     "dim_out": {
         "location_scores": [32, 1, 71],
-        "properties": [1, 1, 1]
+        "global_scores": [1, 1, 1]
     },
     "batch_size": 128,
     "labels": {
@@ -24,7 +24,7 @@
                 ]
             }
         },
-        "properties": "real"
+        "global_scores": {"properties": "real"}
     },
     "shuffle": true,
     "steps": 2000,
