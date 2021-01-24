@@ -3,6 +3,12 @@ import keras
 import os
 import albumentations as ab
 import imagehash
+from albumentations import (
+    HorizontalFlip, IAAPerspective, ShiftScaleRotate, CLAHE, RandomRotate90,
+    Transpose, ShiftScaleRotate, Blur, OpticalDistortion, GridDistortion, HueSaturationValue,
+    IAAAdditiveGaussianNoise, GaussNoise, MotionBlur, MedianBlur, IAAPiecewiseAffine,
+    IAASharpen, IAAEmboss, RandomBrightnessContrast, Flip, OneOf, Compose
+)
 
 
 class DataGenerator(keras.utils.Sequence):
@@ -11,12 +17,14 @@ class DataGenerator(keras.utils.Sequence):
         self.dim_in = kwargs['dim_in']
         self.dim_out = kwargs['dim_out']
         self.batch_size = kwargs['batch_size']
+        self.dataset = kwargs['dataset']
         self.list_IDs = [
             fl.replace('.jpg', '') for fl in os.listdir(
                 os.path.join('data', kwargs['dataset'], subset)
             ) if fl.endswith('.jpg')
         ]
         self.labels = kwargs['labels']
+        self.imgs_out = kwargs['imgs_out']
         self.shuffle = shuffle
         self.aug = __get_augmentor(**kwargs['data_augmentations'])
         self.on_epoch_end()
@@ -43,8 +51,34 @@ class DataGenerator(keras.utils.Sequence):
             y[i] = self.labels[ID]
         return X, keras.utils.to_categorical(y, num_classes=self.n_classes)
     
-    def __get_augmentor(self):
-        return 
+    def __get_augmentor(self, **kwargs):
+        return Compose([
+            RandomRotate90(),
+            Flip(),
+            Transpose(),
+            OneOf([
+                IAAAdditiveGaussianNoise(),
+                GaussNoise(),
+            ], p=0.2),
+            OneOf([
+                MotionBlur(p=0.2),
+                MedianBlur(blur_limit=3, p=0.1),
+                Blur(blur_limit=3, p=0.1),
+            ], p=0.2),
+            ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.2, rotate_limit=45, p=0.2),
+            OneOf([
+                OpticalDistortion(p=0.3),
+                GridDistortion(p=0.1),
+                IAAPiecewiseAffine(p=0.3),
+            ], p=0.2),
+            OneOf([
+                CLAHE(clip_limit=2),
+                IAASharpen(),
+                IAAEmboss(),
+                RandomBrightnessContrast(),
+            ], p=0.3),
+            HueSaturationValue(p=0.3),
+        ], p=0.5)
     
     def __get_imagehash(self, img):
         hash_fn = getattr(imagehash, self.hash['type'])
