@@ -2,7 +2,7 @@
     "dataset": "lp_synthetic",
     "inputs": {
         "local": {
-            "size": [128, 128]
+            "size": [128, 128],
             "image": 3
         },
         "global": {
@@ -11,7 +11,7 @@
     },
     "outputs": {
         "local": {
-            "size": [128, 128]
+            "size": [128, 128],
             "image": 3
         },
         "global": {
