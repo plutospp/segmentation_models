@@ -1,12 +1,20 @@
 {
-    "dataset": "chinese_lp_synthetic",
-    "dim_in": {
-        "image": [128, 128, 3],
-        "random": [128, 128, 1]
+    "dataset": "lp_synthetic",
+    "inputs": {
+        "local": {
+            "image": [128, 128, 3]
+        },
+        "global": {
+            "random": [128, 128, 1]
+        }
     },
-    "dim_out": {
-        "properties": [1, 1, 1],
-        "image_out": [128, 128, 3, 1]
+    "outputs": {
+        "local": {
+            "image": [128, 128, 3]
+        },
+        "global": {
+            "properties": [1, 1, 1],
+        }
     },
     "batch_size": 128,
     "labels": {"properties": "real"},
