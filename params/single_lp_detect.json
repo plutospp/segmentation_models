@@ -4,11 +4,13 @@
         "image": [256, 256, 3]
     },
     "dim_out": {
-        "bbox": [1, 1, 4]
+        "global_scores": [1, 1, 4]
     },
     "batch_size": 32,
     "labels": {
-        "bbox": ["x", "y", "width", "height"]
+        "global_scores": {
+            "bbox": ["x", "y", "width", "height"]
+        }
     },
     "shuffle": true,
     "steps": 500,
