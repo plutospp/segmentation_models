@@ -14,18 +14,14 @@ from albumentations import (
 class DataGenerator(keras.utils.Sequence):
 
     def __init__(self, subset, **kwargs):
-        self.dim_in = kwargs['dim_in']
-        self.dim_out = kwargs['dim_out']
-        self.batch_size = kwargs['batch_size']
         self.dataset = kwargs['dataset']
         self.list_IDs = [
             fl.replace('.jpg', '') for fl in os.listdir(
-                os.path.join('data', kwargs['dataset'], subset)
+                os.path.join('data', self.dataset, subset)
             ) if fl.endswith('.jpg')
         ]
-        self.labels = kwargs['labels']
-        self.imgs_out = kwargs['imgs_out']
-        self.shuffle = shuffle
+        self.shuffle = kwargs['shuffle']
+        self.batch_size = kwargs['batch_size']
         self.aug = __get_augmentor(**kwargs['data_augmentations'])
         self.on_epoch_end()
 
