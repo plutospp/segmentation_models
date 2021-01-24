@@ -11,6 +11,10 @@ from albumentations import (
 )
 
 
+def get_imagehash(self, img, hash_type, hash_size):
+    hash_fn = getattr(imagehash, hash_type)
+    return hash_fn(hash_size = hash_size).hash
+
 class DataGenerator(keras.utils.Sequence):
 
     def __init__(self, subset, **kwargs):
@@ -31,8 +35,8 @@ class DataGenerator(keras.utils.Sequence):
     def __getitem__(self, index):
         indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
         list_IDs_temp = [self.list_IDs[k] for k in indexes]
-        X, y = self.__data_generation(list_IDs_temp)
-        return X, y
+        X, y, z = self.__data_generation(list_IDs_temp)
+        return X, y, z
 
     def on_epoch_end(self):
         self.indexes = np.arange(len(self.list_IDs))
@@ -75,9 +79,3 @@ class DataGenerator(keras.utils.Sequence):
             ], p=0.3),
             HueSaturationValue(p=0.3),
         ], p=0.5)
-    
-    def __get_imagehash(self, img):
-        hash_fn = getattr(imagehash, self.hash['type'])
-        return hash_fn(hash_size = self.hash['size']).hash
-        
-    
