@@ -3,7 +3,7 @@
     "dim_in": [360, 640, 3],
     "dim_out": [90, 160, 24],
     "batch_size": 32,
-    "items": {
+    "labels": {
         "location": ["x", "y"],
         "scale": ["width", "height"],
         "classes": ["pedestrian", "two-wheel", "small", "mid", "large"]
