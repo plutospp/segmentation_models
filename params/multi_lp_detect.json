@@ -4,11 +4,11 @@
         "image": [360, 640, 3]
     },
     "dim_out": {
-        "loc_scores": [90, 160, 3]
+        "location_scores": [90, 160, 3]
     },
     "batch_size": 32,
     "labels": {
-        "loc_scores": {
+        "location_scores": {
             "bbox": ["x", "y", "width", "height"]
         }
     },
