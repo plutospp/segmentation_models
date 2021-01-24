@@ -1,10 +1,10 @@
 {
     "dataset": "MIOTCD",
     "dim_in": {"image": [360, 640, 3]},
-    "dim_out": {"loc_scores": [90, 160, 24]},
+    "dim_out": {"location_scores": [90, 160, 24]},
     "batch_size": 32,
     "labels": {
-        "loc_scores": {
+        "location_scores": {
             "bbox": ["x", "y", "width", "height"],
             "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
             "hash": {"type": "dhash", "size": 4}
