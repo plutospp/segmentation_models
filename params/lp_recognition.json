@@ -2,11 +2,16 @@
     "dataset": "lp_recognition",
     "inputs": {
         "local": {
-            "image": [128, 128, 3]
+            "size": [128, 128],
+            "image": 3
         }
     },
     "outputs": {
-        "local": [32, 1, 39]
+        "local": {
+            "size": [32, 1],
+            "location": 1,
+            "classes": 38
+        }
     },
     "batch_size": 128,
     "labels": {
