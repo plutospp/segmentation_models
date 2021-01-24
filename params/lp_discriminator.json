@@ -4,12 +4,12 @@
         "image": [128, 128, 3]
     },
     "dim_out": {
-        "loc_scores": [32, 1, 71],
+        "location_scores": [32, 1, 71],
         "properties": [1, 1, 1]
     },
     "batch_size": 128,
     "labels": {
-        "loc_scores": {
+        "location_scores": {
             "location": "x",
             "classes": {
                 "chinese": [
