@@ -1,7 +1,9 @@
 {
     "dataset": "CCPDcrop_and_synthetic",
     "inputs": {
-        "image": [128, 128, 3]
+        "global": {
+            "image": [128, 128, 3]
+        }
     },
     "outputs": {
         "local": [32, 1, 39],
