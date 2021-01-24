@@ -1,7 +1,8 @@
 {
     "dataset": "chinese_lp_synthetic",
     "dim_in": {
-        "image": [128, 128, 3]
+        "image": [128, 128, 3],
+        "random": [128, 128, 1]
     },
     "dim_out": {
         "properties": [1, 1, 1],
