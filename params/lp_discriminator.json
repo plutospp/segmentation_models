@@ -1,15 +1,15 @@
 {
     "dataset": "CCPDcrop_and_synthetic",
-    "dim_in": {
+    "inputs": {
         "image": [128, 128, 3]
     },
-    "dim_out": {
-        "location_scores": [32, 1, 39],
-        "global_scores": [1, 1, 1]
+    "outputs": {
+        "local": [32, 1, 39],
+        "global": [1, 1, 1]
     },
     "batch_size": 128,
     "labels": {
-        "location_scores": {
+        "local": {
             "location": "x",
             "classes": {
                 "number": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -19,7 +19,7 @@
                 ]
             }
         },
-        "global_scores": {"properties": "real"}
+        "global": {"properties": "real"}
     },
     "shuffle": true,
     "steps": 2000,
