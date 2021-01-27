@@ -1,14 +1,20 @@
 {
     "dataset": "MIOTCD",
-    "dim_in": {"image": [360, 640, 3]},
-    "dim_out": {"location_scores": [90, 160, 24]},
+    "inputs": {
+        "image": [360, 640, 3]
+    },
+    "outputs": {
+        "location": [90, 160, 1],
+        "scale": [90, 160, 2],
+        "classes": [90, 160, 5],
+        "hash": [90, 160, 16]
+    },
     "batch_size": 32,
     "labels": {
-        "location_scores": {
-            "bbox": ["x", "y", "width", "height"],
-            "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
-            "hash": {"type": "dhash", "size": 4}
-        }
+        "location": ["x", "y"],
+        "scale": ["width", "height"]
+        "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
+        "hash": {"type": "dhash", "size": 4}
     },
     "shuffle": true,
     "steps": 1000,
