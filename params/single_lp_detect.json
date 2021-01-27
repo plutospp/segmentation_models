@@ -1,20 +1,14 @@
 {
     "dataset": "AOLP",
     "inputs": {
-        "local": {
-            "size": [256, 256],
-            "image": 3
-        },
-        "global": 
+        "image": [256, 256, 3]
     },
     "outputs": {
-        "global_scores": [1, 1, 4]
+        "bbox": [1, 1, 4]
     },
     "batch_size": 32,
     "labels": {
-        "global_scores": {
-            "bbox": ["x", "y", "width", "height"]
-        }
+        "bbox": ["x", "y", "width", "height"]
     },
     "shuffle": true,
     "steps": 500,
