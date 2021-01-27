@@ -1,11 +1,13 @@
 {
     "dataset": "Cars_and_MIOTCDcrop",
-    "inputs": {
-        "image": [256, 256, 3]
-    },
-    "outputs": {
-        "bbox": [1, 1, 4],
-        "hash": [1, 1, 16]
+    "global": {
+        "inputs": {
+            "image": [256, 256, 3]
+        },
+        "outputs": {
+            "bbox": [1, 1, 4],
+            "hash": [1, 1, 16]
+        }
     },
     "batch_size": 32,
     "labels": {
