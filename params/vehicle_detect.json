@@ -1,13 +1,17 @@
 {
     "dataset": "MIOTCD",
-    "inputs": {
-        "image": [360, 640, 3]
+    "global": {
+        "inputs": {
+            "image": [360, 640, 3]
+        }
     },
-    "outputs": {
-        "location": [90, 160, 1],
-        "scale": [90, 160, 2],
-        "classes": [90, 160, 5],
-        "hash": [90, 160, 16]
+    "local": {
+        "outputs": {
+            "location": [90, 160, 1],
+            "scale": [90, 160, 2],
+            "classes": [90, 160, 5],
+            "hash": [90, 160, 16]
+        }
     },
     "batch_size": 32,
     "labels": {
