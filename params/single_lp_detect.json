@@ -1,12 +1,10 @@
 {
     "dataset": "AOLP",
-    "inputs": {
-        "global": {
+    "global": {
+        "inputs": {
             "image": [256, 256, 3]
-        }
-    },
-    "outputs": {
-        "global": {
+        },
+        "outputs": {
             "bbox": [1, 1, 4]
         }
     },
