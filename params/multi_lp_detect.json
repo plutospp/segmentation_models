@@ -1,24 +1,16 @@
 {
     "dataset": "CCPD2019",
     "inputs": {
-        "local": {
-            "size": [360, 640],
-            "image": 3
-        }
+        "image": [360, 640, 3]
     },
     "outputs": {
-        "local": {
-            "size": [90, 160],
-            "location": 1,
-            "scales": 2 
-        }
+        "location": [90, 160, 1],
+        "scales": [90, 160, 2]
     },
     "batch_size": 32,
     "labels": {
-        "local": {
-            "location": ["x", "y"],
-            "scales": ["width", "height"]
-        }
+        "location": ["x", "y"],
+        "scales": ["width", "height"]
     },
     "shuffle": true,
     "steps": 500,
