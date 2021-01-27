@@ -1,12 +1,18 @@
 {
     "dataset": "CCPDcrop_and_synthetic",
     "inputs": {
-        "image": [128, 128, 3]
+        "global": {
+            "image": [128, 128, 3]
+        }
     },
     "outputs": {
-        "location": [32, 1, 1],
-        "classes": [32, 1, 38],
-        "property": [1, 1, 1]
+        "global": {
+            "property": [1, 1, 1]
+        },
+        "local": {
+            "location": [32, 1, 1],
+            "classes": [32, 1, 38]
+        }
     },
     "batch_size": 128,
     "labels": {
