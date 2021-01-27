@@ -1,12 +1,12 @@
 {
     "dataset": "CCPD2019",
-    "inputs": {
-        "global": {
+    "global": {
+        "inputs": {
             "image": [360, 640, 3]
         }
     },
-    "outputs": {
-        "local": {
+    "local": {
+        "outputs": {
             "location": [90, 160, 1],
             "scales": [90, 160, 2]
         }
