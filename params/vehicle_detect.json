@@ -12,7 +12,7 @@
     "batch_size": 32,
     "labels": {
         "location": ["x", "y"],
-        "scale": ["width", "height"]
+        "scale": ["width", "height"],
         "classes": ["pedestrian", "two-wheel", "small", "mid", "large"],
         "hash": {"type": "dhash", "size": 4}
     },
