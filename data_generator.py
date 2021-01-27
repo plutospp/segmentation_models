@@ -44,6 +44,7 @@ class DataGenerator(keras.utils.Sequence):
             np.random.shuffle(self.indexes)
 
     def __data_generation(self, list_IDs_temp):
+        Xs = __processing_inputs()
         X = np.empty((self.batch_size, *self.dim, self.n_channels))
         y = np.empty((self.batch_size), dtype=int)
         for i, ID in enumerate(list_IDs_temp):
