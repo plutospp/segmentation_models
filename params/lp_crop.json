@@ -1,0 +1,19 @@
+{
+    "dataset": "AOLP",
+    "global": {
+        "inputs": {
+            "image": [256, 256, 3]
+        },
+        "outputs": {
+            "bbox": [1, 1, 4]
+        }
+    },
+    "batch_size": 32,
+    "labels": {
+        "bbox": ["x", "y", "width", "height"]
+    },
+    "shuffle": true,
+    "steps": 500,
+    "augmentation": "light",
+    "preprocess": null
+}
