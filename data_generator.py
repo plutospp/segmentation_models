@@ -31,7 +31,10 @@ class DataGenerator(keras.utils.Sequence):
         self.shuffle = kwargs['shuffle']
         self.batch_size = kwargs['batch_size']
         self.aug = __get_augmentor(**kwargs['data_augmentations'])
-        self.on_epoch_end()
+        self.on_epoch_end()      
+
+    def __len__(self):
+        return int(np.floor(len(self.list_IDs) / self.batch_size))
 
     def on_epoch_end(self):
         self.indexes = np.arange(len(self.list_IDs))
@@ -105,9 +108,6 @@ class DataGenerator(keras.utils.Sequence):
             self.__processing_global(lines[0], self.globals, in_out_dict)
             self.__processing_local(lines[1:], self.locals, in_out_dict)
         return Xs_global + Xs_local, Ys_global + Ys_local
-
-    def __len__(self):
-        return int(np.floor(len(self.list_IDs) / self.batch_size))
 
     def __getitem__(self, index):
         indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
