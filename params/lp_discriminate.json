@@ -1,25 +1,28 @@
 {
     "dataset": "CCPDcrop_and_synthetic",
-    "global": {
-        "inputs": {
-            "image": {
-                "type": "image",
-                "size": [128, 128]
-            }
-        },
-        "outputs": {
-            "property": {
-                "type": "classes",
-                "len": 1
-            }
+    "inputs": {
+        "image": {
+            "type": "image",
+            "size": [128, 128],
+            "property": "global"
         }
     },
-    "local": {
-        "size": [1, 32],
-        "location": {"type": "keypoints"},
+    "outputs": {
+        "genuine": {
+            "type": "classes",
+            "len": 1,
+            "property": "global"
+        },
+        "location": {
+            "type": "keypoints",
+            "property": "local",
+            "size": [1, 32]
+        },
         "plate_word": {
             "type": "classes",
-            "len": 38
+            "property": "local",
+            "len": 38,
+            "size": [1, 32]
         }
     },
     "batch_size": 128,
