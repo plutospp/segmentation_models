@@ -63,22 +63,6 @@ class DataGenerator(keras.utils.Sequence):
             for i, ID in enumerate(list_IDs_temp):
                 Y[i,] = np.load('data/' + ID + '.npy')
         return Xs, Ys
-
-    def __data_generation(self, list_IDs_temp):
-        data_global = []
-        data_local = []
-        for ID in list_IDs_temp:
-            with open(ID+'.csv') as csvfl:
-                lines = [
-                    [
-                        ast.literal_eval(x) for x in l
-                    ] for l in csv.reader(csvfl)
-                ]
-            data_global.append(lines[0])
-            data_local.append(lines[1:])
-        Xs_global, Ys_global = self.__processing_global(data_global, self.globals)
-        Xs_local, Ys_local = self.__processing_local(data_local, self.locals)
-        return Xs_global + Xs_local, Ys_global + Ys_local
     
     def __get_augmentor(self, **kwargs):
         return Compose([
@@ -108,6 +92,19 @@ class DataGenerator(keras.utils.Sequence):
             ], p=0.3),
             HueSaturationValue(p=0.3),
         ], p=0.5)
+
+    def __data_generation(self, list_IDs_temp):
+        for ID in list_IDs_temp:
+            with open(ID+'.csv') as csvfl:
+                lines = [
+                    [
+                        ast.literal_eval(x) for x in l
+                    ] for l in csv.reader(csvfl)
+                ]
+            in_out_dict = {}
+            self.__processing_global(lines[0], self.globals, in_out_dict)
+            self.__processing_local(lines[1:], self.locals, in_out_dict)
+        return Xs_global + Xs_local, Ys_global + Ys_local
 
     def __len__(self):
         return int(np.floor(len(self.list_IDs) / self.batch_size))
