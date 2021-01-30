@@ -2,11 +2,18 @@
     "dataset": "lp_synthetic",
     "global": {
         "inputs": {
-                "image": [128, 128, 3],
-                "random": [1, 1, 3]
+            "image": {
+                "type": "image",
+                "size": [128, 128]
+            },
+            "random": {
+                "type": "number",
+                "len": 3
+            }
         },
         "outputs": {
-                "image": [128, 128, 3]
+            "size": [128, 128],
+            "image": {"type": "image"}
         }
     },
     "batch_size": 128,
