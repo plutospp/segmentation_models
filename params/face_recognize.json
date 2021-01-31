@@ -1,5 +1,5 @@
 {
-    "dataset": "AOLP",
+    "dataset": "FACE",
     "global": {
         "inputs": {
             "image": {
