@@ -3,34 +3,28 @@
     "global": {
         "inputs": {
             "image": {
-                "type": "image",
+                "image": 1,
                 "shape": [128, 128]
             }
         }
     },
     "local": {
         "location": {
-            "type": "keypoints",
             "shape": [32, 1],
-            "channel": 1
+            "keypoints": 1
         },
         "character": {
-            "type": "classes",
             "shape": [32, 1],
-            "channel": 38
+            "classes": {
+                "number": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+                "alphabat": [
+                    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                    "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+                ]
+            }
         }
     },
     "batch_size": 128,
-    "labels": {
-        "location": "x",
-        "character": {
-            "number": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-            "alphabat": [
-                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-            ]
-        }
-    },
     "shuffle": true,
     "steps": 2000,
     "augmentation": "strong",
