@@ -3,20 +3,15 @@
     "global": {
         "inputs": {
             "image": {
-                "type": "image",
-                "size": [255, 255]
+                "image": 1,
+                "shape": [255, 255]
             }
         },
         "outputs": {
-            "bbox": {
-                "type": "bboxes"
-            }
+            "bbox": {"bboxes": null}
         }
     },
     "batch_size": 32,
-    "labels": {
-        "bbox": ["x", "y", "width", "height"]
-    },
     "shuffle": true,
     "steps": 500,
     "augmentation": "light",
