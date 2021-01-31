@@ -8,7 +8,7 @@
             }
         }
     },
-    "local": {
+    "object": {
         "bbox": {
             "bboxes": null,
             "shape": [90, 160]
