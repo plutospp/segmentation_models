@@ -4,6 +4,7 @@ import os
 import albumentations as ab
 import imagehash
 import csv
+import pandas as pd
 import ast
 from albumentations import (
     HorizontalFlip, IAAPerspective, ShiftScaleRotate, CLAHE, RandomRotate90,
@@ -99,6 +100,10 @@ class DataGenerator(keras.utils.Sequence):
 
     def __data_generation(self, list_IDs_temp):
         for ID in list_IDs_temp:
+            if self.format=='.csv':
+                data = pd.read_csv(ID+'.csv')
+            elif self.format=='.xlsx':
+                data = pd.read_excel(ID+'.xlsx', sheet_name=None)
             with open(ID+self.format) as fl:
                 lines = [
                     [
