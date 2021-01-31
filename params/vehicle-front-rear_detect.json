@@ -2,13 +2,16 @@
     "dataset": "vehicle_front_rear",
     "global": {
         "inputs": {
-            "image": [360, 640, 3]
+            "image": {
+                "type": "image",
+                "shape": [360, 640]
+            }
         }
     },
     "local": {
-        "outputs": {
-            "location": [90, 160, 1],
-            "scales": [90, 160, 2]
+        "bbox": {
+            "type": "bboxes",
+            "shape": [90, 160]
         }
     },
     "batch_size": 32,
