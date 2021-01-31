@@ -22,11 +22,10 @@ class DataGenerator(keras.utils.Sequence):
 
     def __init__(self, subset, **kwargs):
         self.dataset = kwargs['dataset']
-        self.format = kwargs.get('format', '.csv')
         self.list_IDs = [
-            fl.replace(self.format, '') for fl in os.listdir(
+            fl.replace('.xlsx', '') for fl in os.listdir(
                 os.path.join('datasets', self.dataset, subset)
-            ) if fl.endswith(self.format)
+            ) if fl.endswith('.xlsx')
         ]
         self.globals = kwargs['global']
         self.locals = kwargs['local']
@@ -100,19 +99,16 @@ class DataGenerator(keras.utils.Sequence):
 
     def __data_generation(self, list_IDs_temp):
         for ID in list_IDs_temp:
-            if self.format=='.csv':
-                data = pd.read_csv(ID+'.csv')
-            elif self.format=='.xlsx':
-                data = pd.read_excel(ID+'.xlsx', sheet_name=None)
-            with open(ID+self.format) as fl:
+            data = pd.read_excel(ID+'.xlsx', sheet_name=None)
+            for sheet_name, df in data.items():
                 lines = [
                     [
-                        ast.literal_eval(x) for x in l
-                    ] for l in csv.reader(fl)
+                        ast.literal_eval(x) for x in l.split(',')
+                    ] for l in df.to_csv().split('\n')
                 ]
-            in_out_dict = {}
-            self.__processing_global(lines[0], self.globals, in_out_dict)
-            self.__processing_local(lines[1:], self.locals, in_out_dict)
+                in_out_dict = {}
+                self.__processing_global(lines[0], self.globals, in_out_dict)
+                self.__processing_local(lines[1:], self.locals, in_out_dict)
         return Xs_global + Xs_local, Ys_global + Ys_local
 
     def __getitem__(self, index):
