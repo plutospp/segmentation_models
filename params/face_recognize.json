@@ -12,7 +12,9 @@
                 "bboxes": null
             },
             "keypoints": {
-                "keypoints": ["left_eye", "right_eye", "left_ear", "right_ear", "nose", "mouth"]
+                "keypoints": [
+                    "left_eye", "right_eye", "left_ear", "right_ear", "nose", "mouth"
+                ]
             }
         }
     },
