@@ -3,14 +3,14 @@
     "global": {
         "inputs": {
             "image": {
-                "type": "image",
+                "image": 1,
                 "shape": [360, 640]
             }
         }
     },
     "local": {
         "bbox": {
-            "type": "bboxes",
+            "bboxes": null,
             "shape": [90, 160]
         }
     },
