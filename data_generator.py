@@ -69,33 +69,49 @@ class DataGenerator(keras.utils.Sequence):
         return Xs, Ys
     
     def __get_augmentor(self, **kwargs):
-        return Compose([
-            RandomRotate90(),
-            Flip(),
-            Transpose(),
-            OneOf([
-                IAAAdditiveGaussianNoise(),
-                GaussNoise(),
-            ], p=0.2),
-            OneOf([
-                MotionBlur(p=0.2),
-                MedianBlur(blur_limit=3, p=0.1),
-                Blur(blur_limit=3, p=0.1),
-            ], p=0.2),
-            ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.2, rotate_limit=45, p=0.2),
-            OneOf([
-                OpticalDistortion(p=0.3),
-                GridDistortion(p=0.1),
-                IAAPiecewiseAffine(p=0.3),
-            ], p=0.2),
-            OneOf([
-                CLAHE(clip_limit=2),
-                IAASharpen(),
-                IAAEmboss(),
-                RandomBrightnessContrast(),
-            ], p=0.3),
-            HueSaturationValue(p=0.3),
-        ], p=0.5)
+        targets = {}
+        for K, V in kwargs.items():
+            for k, v in V.items():
+                if 'image' in v:
+                    targets.update({
+                         if 'image' in v
+                    })
+                elif 'keypoints' in v:
+
+                elif 'bboxes' in v:
+
+                elif 'mask' in v:
+
+        return Compose(
+            [
+                RandomRotate90(),
+                Flip(),
+                Transpose(),
+                OneOf([
+                    IAAAdditiveGaussianNoise(),
+                    GaussNoise(),
+                ], p=0.2),
+                OneOf([
+                    MotionBlur(p=0.2),
+                    MedianBlur(blur_limit=3, p=0.1),
+                    Blur(blur_limit=3, p=0.1),
+                ], p=0.2),
+                ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.2, rotate_limit=45, p=0.2),
+                OneOf([
+                    OpticalDistortion(p=0.3),
+                    GridDistortion(p=0.1),
+                    IAAPiecewiseAffine(p=0.3),
+                ], p=0.2),
+                OneOf([
+                    CLAHE(clip_limit=2),
+                    IAASharpen(),
+                    IAAEmboss(),
+                    RandomBrightnessContrast(),
+                ], p=0.3),
+                HueSaturationValue(p=0.3),
+            ],
+            additional_targets = targets, p=0.5
+        )
 
     def __data_generation(self, list_IDs_temp):
         for ID in list_IDs_temp:
