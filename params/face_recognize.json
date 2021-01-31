@@ -1,0 +1,24 @@
+{
+    "dataset": "AOLP",
+    "global": {
+        "inputs": {
+            "image": {
+                "image": 1,
+                "shape": [255, 255]
+            }
+        },
+        "outputs": {
+            "bbox": {
+                "bboxes": null
+            },
+            "keypoints": {
+                "keypoints": ["left_eye", "right_eye", "left_ear", "right_ear", "nose", "mouth"]
+            }
+        }
+    },
+    "batch_size": 32,
+    "shuffle": true,
+    "steps": 500,
+    "augmentation": "light",
+    "preprocess": null
+}
