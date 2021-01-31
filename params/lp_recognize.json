@@ -8,7 +8,7 @@
             }
         }
     },
-    "local": {
+    "object": {
         "location": {
             "shape": [32, 1],
             "keypoints": 1
