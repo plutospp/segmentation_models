@@ -21,10 +21,11 @@ class DataGenerator(keras.utils.Sequence):
 
     def __init__(self, subset, **kwargs):
         self.dataset = kwargs['dataset']
+        self.format = kwargs.get('format', '.csv')
         self.list_IDs = [
-            fl.replace('.csv', '') for fl in os.listdir(
+            fl.replace(self.format, '') for fl in os.listdir(
                 os.path.join('datasets', self.dataset, subset)
-            ) if fl.endswith('.csv')
+            ) if fl.endswith(self.format)
         ]
         self.globals = kwargs['global']
         self.locals = kwargs['local']
@@ -98,11 +99,11 @@ class DataGenerator(keras.utils.Sequence):
 
     def __data_generation(self, list_IDs_temp):
         for ID in list_IDs_temp:
-            with open(ID+'.csv') as csvfl:
+            with open(ID+self.format) as fl:
                 lines = [
                     [
                         ast.literal_eval(x) for x in l
-                    ] for l in csv.reader(csvfl)
+                    ] for l in csv.reader(fl)
                 ]
             in_out_dict = {}
             self.__processing_global(lines[0], self.globals, in_out_dict)
