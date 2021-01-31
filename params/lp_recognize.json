@@ -1,14 +1,12 @@
 {
     "dataset": "lp_recognition",
-    "global": {
-        "inputs": {
-            "image": {
-                "image": 1,
-                "shape": [128, 128]
-            }
+    "global_inputs": {
+        "image": {
+            "image": 1,
+            "shape": [128, 128]
         }
     },
-    "object": {
+    "object_outputs": {
         "location": {
             "shape": [32, 1],
             "keypoints": 1
