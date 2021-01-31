@@ -2,16 +2,20 @@
     "dataset": "singapore_maritime",
     "global": {
         "inputs": {
-            "image": [360, 640, 3]
+            "image": {
+                "image": 1,
+                "shape": [360, 640]
+            }
         },
         "outputs": {
-            "mask": [360, 640, 1]
+            "mask": {
+                "mask": 1,
+                "classes": ["sea"],
+                "shape": [90, 160]
+            }
         }
     },
     "batch_size": 32,
-    "labels": {
-        "mask": ["sea"]
-    },
     "shuffle": true,
     "steps": 1000,
     "augmentation": "light",
