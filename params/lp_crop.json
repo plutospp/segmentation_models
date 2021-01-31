@@ -1,15 +1,13 @@
 {
     "dataset": "AOLP",
-    "global": {
-        "inputs": {
-            "image": {
-                "image": 1,
-                "shape": [255, 255]
-            }
-        },
-        "outputs": {
-            "bbox": {"bboxes": null}
+    "global_inputs": {
+        "image": {
+            "image": 1,
+            "shape": [255, 255]
         }
+    },
+    "global_outputs": {
+        "bbox": {"bboxes": null}
     },
     "batch_size": 32,
     "shuffle": true,
