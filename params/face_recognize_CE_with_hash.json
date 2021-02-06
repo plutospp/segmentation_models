@@ -1,0 +1,47 @@
+{
+    "dataset": "face_recognize",
+    "global_vars": {
+        "image": {
+            "image": null,
+            "shape": [96, 96],
+            "io": "in"
+        },
+        "bbox": {
+            "bboxes": ["face"],
+            "io": "out",
+            "hash": {"type": "dhash", "size": 4, "image": "image"}
+        },
+        "keypoints": {
+            "keypoints": [
+                "left_eye_center",
+                "right_eye_center",
+                "left_eye_inner_corner",
+                "left_eye_outer_corner",
+                "right_eye_inner_corner",
+                "right_eye_outer_corner",
+                "left_eyebrow_inner_end",
+                "left_eyebrow_outer_end",
+                "right_eyebrow_inner_end",
+                "right_eyebrow_outer_end",
+                "nose_tip",
+                "mouth_left_corner",
+                "mouth_right_corner",
+                "mouth_center_top_lip",
+                "mouth_center_bottom_lip"
+            ],
+            "io": "out",
+            "image": "image"
+        }
+    },
+    "vars_loss": {
+        "bbox": "binary_crossentropy",
+        "bbox_hash": "binary_focal_loss",
+        "keypoints": "binary_crossentropy"
+    },
+    "batch_size": 128,
+    "shuffle": true,
+    "steps": 500,
+    "augmentation": true,
+    "preprocess": "caffe",
+    "model": "vgg19bn-no_pool-face_with_hash"
+}
