@@ -12,7 +12,7 @@ Table of Contents
  
 Quick start
 ~~~~~~~~~~~
-Library is build to work together with Keras and TensorFlow Keras frameworks
+This project use the library of qubvel/segmentation_models most, aiming at most of CV tasks such as object detection(including the prediction of bboxes, keypoints, heatmap, ..., etc), appearance embedding learning, encoding/decoding of images and GAN. 
 
 .. code:: python
 
