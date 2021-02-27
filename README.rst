@@ -1,20 +1,3 @@
-**The main features** of this library are:
-
--  High level API (just two lines of code to create model for segmentation)
--  **4** models architectures for binary and multi-class image segmentation
-   (including legendary **Unet**)
--  **25** available backbones for each architecture
--  All backbones have **pre-trained** weights for faster and better
-   convergence
-- Helpful segmentation losses (Jaccard, Dice, Focal) and metrics (IoU, F-score)
-
-**Important note**
-
-    Some models of version ``1.*`` are not compatible with previously trained models,
-    if you have such models and want to load them - roll back with:
-
-    $ pip install -U segmentation-models==0.2.1
-
 Table of Contents
 ~~~~~~~~~~~~~~~~~
  - `Quick start`_
