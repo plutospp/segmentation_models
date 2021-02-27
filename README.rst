@@ -49,7 +49,7 @@ Simple training pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~
 After setting the model(graph and pretrained weights), configuration and generation of data, just execute
 .. code:: python
-    python3 trainval.py --config xxx
+    $ python3 trainval.py --config xxx
 
 Examples
 ~~~~~~~~
