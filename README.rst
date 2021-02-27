@@ -17,16 +17,16 @@ Data format
 ~~~~~~~~~~~
 The data is stored in .xlsx file with single sheet for non-series model and with multiple sheets for time-series model. The format is like
 
-+----------+---------------------------------------------------------+
-| Column 1 | Column 2                                                |
-+==========+=========================================================+
-| Foo      | Put two (or more) spaces as a field separator.          |
-+----------+---------------------------------------------------------+
-| Bar      | Even very very long lines like these are fine, as long  |
-|          | as you do not put in line endings here.                 |
-+----------+---------------------------------------------------------+
-| Qux      | This is the last line.                                  |
-+----------+---------------------------------------------------------+
++----------+----------+
+| Column 1 | Column 2 |
++==========+==========+
+| Foo      |          |
++----------+----------+
+| Bar      |          |
+|          |          |
++----------+----------+
+| Qux      |          |
++----------+----------+
 
 Configuration
 ~~~~~~~~~~~
