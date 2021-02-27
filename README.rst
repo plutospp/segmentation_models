@@ -17,60 +17,39 @@ Data format
 ~~~~~~~~~~~
 The data is stored in .xlsx file with single sheet for non-series model and with multiple sheets for time-series model. The format is like
 
-+----------+----------+
-| Column 1 | Column 2 |
-+==========+==========+
-| Foo      |          |
-+----------+----------+
-| Bar      |          |
-|          |          |
-+----------+----------+
-| Qux      |          |
-+----------+----------+
++--------+--------+--------+--------+--------+--------+
+|  key1  |  key1  |  key2  |  key2  |  key2  |  key2  |
++========+========+========+========+========+========+
+| value1 | value2 | value1 | value2 | value3 | value4 |
++--------+--------+--------+--------+--------+--------+
+
+The keys are strings and values could be file paths or numbers. One key may correspond to several values.
 
 Configuration
 ~~~~~~~~~~~
+The confiuration formated as .json contains informations how the program interpretates the data recorded in the .xlsx file.
+.. code:: json
+
+    {
+        "hello": "world",
+        "this": {
+            "can": {
+                "be": "nested"
+            }
+        }
+    }
+    
+The values corresponding to keys of image or array are the string of file path; that of keypoints are 2n numbers(x and y of n points); that of bboxes are 4n numbers(xmin, ymin xmax, ymax of n boxes)
 
 Models
 ~~~~~~~~~~~
+The keras models are stored at the folder "models" which contains the .yaml for the model graph and .h5 for the model weights. The names of inputs and outputs should be consistant with the corresponding configuration.
 
 Simple training pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
+After setting the model(graph and pretrained weights), configuration and generation of data, just execute
 .. code:: python
-
-    import segmentation_models as sm
-
-    BACKBONE = 'resnet34'
-    preprocess_input = sm.get_preprocessing(BACKBONE)
-
-    # load your data
-    x_train, y_train, x_val, y_val = load_data(...)
-
-    # preprocess input
-    x_train = preprocess_input(x_train)
-    x_val = preprocess_input(x_val)
-
-    # define model
-    model = sm.Unet(BACKBONE, encoder_weights='imagenet')
-    model.compile(
-        'Adam',
-        loss=sm.losses.bce_jaccard_loss,
-        metrics=[sm.metrics.iou_score],
-    )
-
-    # fit model
-    # if you use data generator use model.fit_generator(...) instead of model.fit(...)
-    # more about `fit_generator` here: https://keras.io/models/sequential/#fit_generator
-    model.fit(
-       x=x_train,
-       y=y_train,
-       batch_size=16,
-       epochs=100,
-       validation_data=(x_val, y_val),
-    )
-
-Same manipulations can be done with ``Linknet``, ``PSPNet`` and ``FPN``. For more detailed information about models API and  use cases `Read the Docs <https://segmentation-models.readthedocs.io/en/latest/>`__.
+    python3 trainval.py --config xxx
 
 Examples
 ~~~~~~~~
