@@ -28,6 +28,7 @@ The keys are strings and values could be file paths or numbers. One key may corr
 Configuration
 ~~~~~~~~~~~
 The confiuration formated as .json contains informations how the program interpretates the data recorded in the .xlsx file.
+
 .. code:: json
 
     {
