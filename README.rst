@@ -58,17 +58,17 @@ Examples
 Face Analysis:
  - [Dataset] Facial Keypoints Detection `here <https://www.kaggle.com/c/facial-keypoints-detection/data>`__.
  - [Data Augmentation]
-   - [color augmentation]
-   - [noise augmentation]
-   - [perspective transform]
+  - [color augmentation]
+  - [noise augmentation]
+  - [perspective transform]
  - [Model]
-   - [backbone] VGG19 with batch-normalization, using stride 2 convolution instead of max-pooling.
-   - [bbox detection branch] Predict bbox of facial part.
-   - [hashcode prediction branch] Give the 16-digit binary hash code of facial part.
-   - [group mask prediction branch] Detect group of keypoints(left-eye, right-eye, mouth parts) with form of heatmap.
-   - [keypoint deviation] Predict the deviation of keypoint with respect to location of grid.
-   - [denoise variational auto encoder/decoder] Recover and filter noise of image with normally distributed coding.
-   - [image/recover discriminator] Discriminate the original image and the recovered or randomly generated image.
+  - [backbone] VGG19 with batch-normalization, using stride 2 convolution instead of max-pooling.
+  - [bbox detection branch] Predict bbox of facial part.
+  - [hashcode prediction branch] Give the 16-digit binary hash code of facial part.
+  - [group mask prediction branch] Detect group of keypoints(left-eye, right-eye, mouth parts) with form of heatmap.
+  - [keypoint deviation] Predict the deviation of keypoint with respect to location of grid.
+  - [denoise variational auto encoder/decoder] Recover and filter noise of image with normally distributed coding.
+  - [image/recover discriminator] Discriminate the original image and the recovered or randomly generated image.
 
 Citing
 ~~~~~~~~
