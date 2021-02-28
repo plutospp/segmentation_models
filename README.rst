@@ -27,7 +27,7 @@ The keys are strings and values could be file paths or numbers. One key may corr
 
 Configuration
 ~~~~~~~~~~~
-The confiuration formated as .json contains informations how the program interpretates the data recorded in the .xlsx file.
+The confiuration stored in folder "config" formated as .json contains informations how the program interpretates the data recorded in the .xlsx file.
 
 .. code:: json
 
@@ -49,6 +49,7 @@ The keras models are stored at the folder "models" which contains the .yaml for 
 Simple training pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~
 After setting the model(graph and pretrained weights), configuration and generation of data, just execute
+
 .. code:: python
     $ python3 trainval.py --config xxx
 
