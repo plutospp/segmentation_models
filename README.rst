@@ -55,8 +55,8 @@ After setting the model(graph and pretrained weights), configuration and generat
 
 Examples
 ~~~~~~~~
-Face detection:
- - [Jupyter Notebook] Binary segmentation (`cars`) on CamVid dataset `here <https://github.com/qubvel/segmentation_models/blob/master/examples/binary%20segmentation%20(camvid).ipynb>`__.
+Face Analysis:
+ - [Dataset]  `here <https://www.kaggle.com/c/facial-keypoints-detection/data>`__.
 
 Citing
 ~~~~~~~~
