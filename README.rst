@@ -27,7 +27,7 @@ The keys are strings and values could be file paths or numbers. One key may corr
 
 Configuration
 ~~~~~~~~~~~
-The confiuration stored in folder "config" formated as .json contains informations how the program interpretates the data recorded in the .xlsx file.
+The confiuration .json files stored in folder "config" contains informations how the program interpretates the data recorded in the .xlsx file.
 
 .. code:: json
 
@@ -55,9 +55,8 @@ After setting the model(graph and pretrained weights), configuration and generat
 
 Examples
 ~~~~~~~~
-Models training examples:
+Face detection:
  - [Jupyter Notebook] Binary segmentation (`cars`) on CamVid dataset `here <https://github.com/qubvel/segmentation_models/blob/master/examples/binary%20segmentation%20(camvid).ipynb>`__.
- - [Jupyter Notebook] Multi-class segmentation (`cars`, `pedestrians`) on CamVid dataset `here <https://github.com/qubvel/segmentation_models/blob/master/examples/multiclass%20segmentation%20(camvid).ipynb>`__.
 
 Citing
 ~~~~~~~~
